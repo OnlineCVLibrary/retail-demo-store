@@ -30,3 +30,15 @@ The Retail Demo Store is an eCommerce reference implementation designed to showc
 ![Ruff](https://github.com/aws-samples/retail-demo-store/actions/workflows/ruff.yml/badge.svg?branch=master)
 ![UI Build](https://github.com/aws-samples/retail-demo-store/actions/workflows/build-ui.yml/badge.svg?branch=master)
 
+build fix commands
+sudo apt-get update
+sudo apt-get install python3-venv
+rm -rf .venv
+./stage.sh retail-demo-store-staging--environment-qa retail-demo-store-artifacts/
+python3 --version
+python3 -m venv .venv
+source .venv/bin/activate
+pip install --upgrade pip
+pip install -r generators/requirements.txt
+./stage.sh retail-demo-store-staging--environment-qa retail-demo-store-artifacts/
+sudo shutdown +30
